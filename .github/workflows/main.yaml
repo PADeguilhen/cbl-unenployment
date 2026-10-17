@@ -17,6 +17,13 @@ jobs:
         npm install -g @zowe/cli@zowe-v3-lts
         zowe --version
 
+    - name: Debug - locate script
+      run: |
+        pwd
+        ls -la
+        ls -la .github || true
+        find . -name "zowe_operations.sh"
+
     - name: Setup Mainframe Environment and Upload COBOL Check
       env:
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
