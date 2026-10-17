@@ -10,12 +10,12 @@
                     "type": "zosmf",
                     "properties": {
                         "port": 10443
-                    }
-                },
-				"secure": [
-					"password",
-					"username"
-				]
+                    },
+					"secure": [
+						"password",
+						"user"
+					]
+                }
             }
         },
         "base": {
