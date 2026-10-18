@@ -6,6 +6,7 @@ on:
 jobs:
   cobol-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       ZOWE_USERNAME: ${{ secrets.ZOWE_OPT_USER }}
       ZOWE_PASSWORD: ${{ secrets.ZOWE_OPT_PASSWORD }}
@@ -25,12 +26,14 @@ jobs:
         zowe --version
 
     - name: Setup Mainframe Environment and Upload COBOL Check
+      timeout-minutes: 5
       run: |
         chmod +x .github/scripts/zowe_operations.sh
-        .github/scripts/zowe_operations.sh
+        bash -x .github/scripts/zowe_operations.sh
 
     - name: Run COBOL Check on Mainframe
+      timeout-minutes: 5
       env:
       run: |
         chmod +x .github/scripts/mainframe_operations.sh
-          .github/scripts/mainframe_operations.sh
+        bash -x .github/scripts/mainframe_operations.sh
