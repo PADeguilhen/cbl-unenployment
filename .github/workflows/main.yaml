@@ -10,6 +10,8 @@ jobs:
     env:
       ZOWE_USERNAME: ${{ secrets.ZOWE_OPT_USER }}
       ZOWE_PASSWORD: ${{ secrets.ZOWE_OPT_PASSWORD }}
+      ZOWE_OPT_USER: ${{ secrets.ZOWE_USERNAME }}
+      ZOWE_OPT_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
     steps:
 
     - name: Checkout repository
